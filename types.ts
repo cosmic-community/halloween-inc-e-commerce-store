@@ -58,6 +58,19 @@ export interface Review extends CosmicObject {
   };
 }
 
+// Contact Submission interface
+export interface ContactSubmission extends CosmicObject {
+  type: 'contact-submissions';
+  metadata: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    status: 'New' | 'In Progress' | 'Resolved';
+    submission_date: string;
+  };
+}
+
 // API response type
 export interface CosmicResponse<T> {
   objects: T[];
@@ -78,4 +91,9 @@ export function isCollection(obj: CosmicObject): obj is Collection {
 // Type guard for Review
 export function isReview(obj: CosmicObject): obj is Review {
   return obj.type === 'reviews';
+}
+
+// Type guard for Contact Submission
+export function isContactSubmission(obj: CosmicObject): obj is ContactSubmission {
+  return obj.type === 'contact-submissions';
 }

@@ -20,6 +20,9 @@ export default function Header() {
             <Link href="/#collections" className="hover:text-primary transition-colors">
               Collections
             </Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">
+              Contact
+            </Link>
           </nav>
         </div>
       </div>
